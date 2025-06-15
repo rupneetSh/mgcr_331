@@ -245,15 +245,6 @@ td {
 }
 
 
-@media (max-width: 768px) {
-  .variation-table {
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
-  }
-}
-
-
 /* Images */
 img {
   margin-top: 25px;
