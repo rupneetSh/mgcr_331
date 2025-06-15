@@ -1,0 +1,264 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Layout */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  min-height: 100vh;
+  color: #111;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+}
+
+/* Sidebar Navigation */
+.sidebar {
+  width: 250px;
+  background-color: #003b46;
+  color: white;
+  padding: 25px;
+  flex-shrink: 0;
+}
+
+.sidebar h2 {
+  font-size: 23px;
+  color: #00cfcf;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+}
+
+.sidebar ul {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.sidebar li {
+  margin: 12px 0;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #00cfcf;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  text-decoration: underline;
+  color: #ffffff;
+}
+
+.sidebar p {
+  font-size: 14px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
+
+.nav-button {
+  display: block;
+  text-align: center;
+  background-color: #00cfcf;       
+  color: #003b46 !important;       
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none !important; 
+  padding: 14px 10px;
+  border-radius: 16px;
+  margin-bottom: 16px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  word-wrap: break-word;
+}
+
+.nav-button:hover {
+  background-color: #00b0b0;        
+  transform: scale(1.03);
+}
+
+
+
+.sidebar form {
+  padding: 15px;
+  background-color: #002f38;
+  border-radius: 6px;
+  font-size: 1px;
+  border: 1px solid #005e64;
+  max-width: 90%;
+}
+
+.sidebar form p,
+.sidebar form label {
+  display: block;
+  color: #ffffff;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.sidebar form input[type="text"] {
+  width: 100%;
+  padding: 6px;
+  border-radius: 4px;
+  border: none;
+  background-color: #fff;
+  margin-bottom: 12px;
+}
+
+.sidebar form input[type="radio"] {
+  margin-right: 5px;
+  margin-bottom: 10px;
+}
+
+.sidebar form button {
+  padding: 6px 14px;
+  background-color: #00cfcf;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 8px;
+  transition: 0.3s ease;
+}
+
+.sidebar form button:hover {
+  background-color: #00b0b0;
+}
+
+.sidebar form input[type="radio"] {
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.sidebar form label {
+  margin-right: 10px;
+  display: inline-block;
+}
+
+
+
+
+/* Main Content */
+.content {
+  flex: 1;
+  padding: 40px;
+  background-color: white;
+  background: linear-gradient(to bottom,  #b2edf2, #00798c);
+  
+}
+
+.content h1 {
+  font-size: 26px;
+  margin-bottom: 20px;
+  color: #003b46;
+}
+
+.content h2 {
+  color: #003b46;
+  font-size: 23px;
+}
+
+.content ul {
+  margin-bottom: 20px;
+  padding-left: 20px;
+  color: #002f38;
+}
+
+.content ol {
+  margin-top: 20px;
+  padding-left: 25px;
+}
+
+.content li {
+  margin: 8px 0;
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+table, th, td {
+  border: 1px solid #002f38;
+}
+
+th {
+  background-color: #007e8c;
+  color: white;
+  padding: 10px;
+  text-align: left;
+}
+
+td {
+  padding: 10px;
+}
+
+.variation-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.variation-table th,
+.variation-table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #002f38;
+}
+
+.variation-table th {
+  background-color: #00798c;
+  color: white;
+}
+
+/* Color-coded classes for price change */
+.red {
+  background-color: #f28c8c;
+  color: black;
+  font-weight: bold;
+}
+
+.orange {
+  background-color: #ffe08c;
+  color: black;
+  font-weight: bold;
+}
+
+.yellow {
+  background-color: #fff7ad;
+  color: black;
+  font-weight: bold;
+}
+
+.green {
+  background-color: #a9e5b4;
+  color: black;
+  font-weight: bold;
+}
+
+
+@media (max-width: 768px) {
+  .variation-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+
+/* Images */
+img {
+  margin-top: 25px;
+  max-width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
