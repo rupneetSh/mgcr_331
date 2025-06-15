@@ -1,11 +1,9 @@
-/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Layout */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
@@ -16,9 +14,13 @@ body {
 .container {
   display: flex;
   width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
 }
 
-/* Sidebar Navigation */
+
+/*sidebar*/
 .sidebar {
   width: 250px;
   background-color: #003b46;
@@ -62,6 +64,8 @@ body {
   padding-top: 10px;
 }
 
+
+/*buttons*/
 .nav-button {
   display: block;
   text-align: center;
@@ -93,7 +97,7 @@ body {
 }
 
 
-
+/*feedback form*/
 .sidebar form {
   padding: 15px;
   background-color: #002f38;
@@ -153,13 +157,12 @@ body {
 
 
 
-/* Main Content */
+/*main page*/
 .content {
   flex: 1;
-  padding: 40px;
+  padding: 40px; 
   background-color: white;
-  background: linear-gradient(to bottom,  #b2edf2, #00798c);
-  
+
 }
 
 .content h1 {
@@ -188,7 +191,53 @@ body {
   margin: 8px 0;
 }
 
-/* Table Styling */
+.content-wrapper {
+
+  background: linear-gradient(to bottom,  #b2edf2, #00798c);
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  width: 100%;
+  justify-content: space-between;
+  padding: 40px;
+}
+
+.external-box {
+  background-color: #003b46;
+  color: #b2edf2;
+  padding: 20px;
+  border-radius: 8px;
+  width: 220px;
+
+  align-self: flex-start;
+  margin-top: 40px; 
+  margin-right: 0;       
+  margin-left: 0;
+}
+
+.external-box h3 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  border-bottom: 1px solid #b2edf2;
+  padding-bottom: 5px;
+}
+
+.external-box ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.external-box a {
+  color: #00cfcf;
+  text-decoration: none;
+}
+
+.external-box a:hover {
+  text-decoration: underline;
+  color: #b2edf2;
+}
+
+/*table*/
 table {
   width: 100%;
   border-collapse: collapse;
@@ -229,7 +278,6 @@ td {
   color: white;
 }
 
-/* Color-coded classes for price change */
 .red {
   background-color: #f28c8c;
   color: black;
@@ -255,7 +303,7 @@ td {
 }
 
 
-/* Images */
+/*images*/
 img {
   margin-top: 25px;
   max-width: 100%;

@@ -5,10 +5,10 @@
   <title>Average Property Price</title>
   <link rel="stylesheet" href="css/style.css" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
 </head>
 <body>
   <div class="container">
+    <!-- Sidebar Navigation and Form -->
     <nav class="sidebar">
       <h2>Sales Summary</h2>
       <ul>
@@ -17,137 +17,135 @@
         <li><a href="price_variation.html" class="nav-button">Variations in Sales Price</a></li>
       </ul>
 
-      <p>External Resources</p>
-      <ul>
-        <li><a href="https://www.rightmove.co.uk/">Rightmove UK</a></li>
-        <li><a href="https://www.gov.uk/government/statistics">UK Gov Housing Data</a></li>
-      </ul>
-
+      <!-- Feedback Form -->
       <form>
-            <p style="margin-top: 10px;">Did You Find This Information Useful?</p>
-            <input type="radio" id="yes" name="useful" value="yes" />
-            <label for="yes">Yes</label>
-            <input type="radio" id="no" name="useful" value="no" />
-            <label for="no">No</label><br /><br />
+        <p style="margin-top: 10px;">Did You Find This Information Useful?</p>
+        <input type="radio" id="yes" name="useful" value="yes" />
+        <label for="yes">Yes</label>
+        <input type="radio" id="no" name="useful" value="no" style="margin-left: 10px;" />
+        <label for="no">No</label><br /><br />
 
-            <label for="comments">Comments:</label><br />
-            <textarea id="comments" name="comments" rows="3" style="width: 100%; resize: none;"></textarea><br /><br />
+        <label for="comments">Comments:</label><br />
+        <textarea id="comments" name="comments" rows="3" style="width: 100%; resize: none;"></textarea><br /><br />
 
-            <br /><br /><button type="submit">Submit</button>
-            <button type="reset">Reset</button>
-       </form>
-
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+      </form>
     </nav>
 
-    <main class="content">
-      <h1>Average Property Price</h1>
-      <ol>
-        <li>Total Sales:<strong> £1.84M</strong></li>
-        <li>Most Expensive Neighborhood:<strong> Chelsea (£2.45M)</strong></li>
-        <li>Least Expensive Neighborhood:<strong> Greenwich (£1.27M)</strong></li>
-      </ol>
+    
+    <!-- Main Content and External Links Side by Side -->
+    <div class="content-wrapper">
+      <main class="content">
+        <h1>Average Property Price</h1>
+        <ol>
+          <li>Total Sales:<strong> £1.84M</strong></li>
+          <li>Most Expensive Neighborhood:<strong> Chelsea (£2.45M)</strong></li>
+          <li>Least Expensive Neighborhood:<strong> Greenwich (£1.27M)</strong></li>
+        </ol>
 
-      <table>
-        <thead>
-          <tr><th>Neighborhood</th><th>Average Price (£)</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Chelsea</td><td>2,452,893.53</td></tr>
-          <tr><td>Westminster</td><td>2,291,436.73</td></tr>
-          <tr><td>Kensington</td><td>2,282,232.92</td></tr>
-          <tr><td>Notting Hill</td><td>1,957,588.57</td></tr>
-          <tr><td>Marylebone</td><td>1,824,982.30</td></tr>
-          <tr><td>Soho</td><td>1,781,120.77</td></tr>
-          <tr><td>Camden</td><td>1,626,332.17</td></tr>
-          <tr><td>Islington</td><td>1,507,373.20</td></tr>
-          <tr><td>Shoreditch</td><td>1,332,828.89</td></tr>
-          <tr><td>Greenwich</td><td>1,269,408.81</td></tr>
-        </tbody>
-      </table>
+        <table>
+          <thead>
+            <tr><th>Neighborhood</th><th>Average Price (£)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Chelsea</td><td>2,452,893.53</td></tr>
+            <tr><td>Westminster</td><td>2,291,436.73</td></tr>
+            <tr><td>Kensington</td><td>2,282,232.92</td></tr>
+            <tr><td>Notting Hill</td><td>1,957,588.57</td></tr>
+            <tr><td>Marylebone</td><td>1,824,982.30</td></tr>
+            <tr><td>Soho</td><td>1,781,120.77</td></tr>
+            <tr><td>Camden</td><td>1,626,332.17</td></tr>
+            <tr><td>Islington</td><td>1,507,373.20</td></tr>
+            <tr><td>Shoreditch</td><td>1,332,828.89</td></tr>
+            <tr><td>Greenwich</td><td>1,269,408.81</td></tr>
+          </tbody>
+        </table>
 
+        <h2>Average Property Price by Neighborhood</h2>
+        <canvas id="avgPriceChart" width="300" height="200" style="margin-top: 30px;"></canvas>
+      </main>
 
-
-      <h2>Average Property Price by Neighborhood</h2>
-      <canvas id="avgPriceChart" width="300" height="200" style="margin-top: 30px;"></canvas>
-
-
-    </main>
+      <!-- External Links -->
+      <aside class="external-box">
+        <h3>External Resources</h3>
+        <ul>
+          <li><a href="https://www.rightmove.co.uk/" target="_blank">Rightmove UK</a></li>
+          <li><a href="https://www.gov.uk/government/statistics" target="_blank">UK Gov Housing Data</a></li>
+        </ul>
+      </aside>
+    </div>
   </div>
 
   <script>
-        const ctx = document.getElementById('avgPriceChart').getContext('2d');
-
-        const avgPriceChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-            labels: [
-                'Chelsea', 'Westminster', 'Kensington', 'Notting Hill', 'Marylebone',
-                'Soho', 'Camden', 'Islington', 'Shoreditch', 'Greenwich'
-            ],
-            datasets: [{
-                label: 'Average Price (£)',
-                data: [
-                2452893.53, 2291436.73, 2282232.92, 1957588.57, 1824982.30,
-                1781120.77, 1626332.17, 1507373.20, 1332828.89, 1269408.81
-                ],
-                backgroundColor: '#00cfcf',
-                borderColor: '#002f38',
-                borderWidth: 1
-            }]
-            },
-            options: {
-            responsive: true,
-            plugins: {
-                legend: {
-                display: false
-                },
-                tooltip: {
-                callbacks: {
-                    label: function(context) {
-                    let value = context.raw;
-                    return '£' + value.toLocaleString();
-                    }
-                }
-                }
-            },
-            scales: {
-                y: {
-                ticks: {
-                    color: '#002f38',
-                    callback: function(value) {
-                    return '£' + value.toLocaleString();
-                    }
-                },
-                grid: {
-                    color: '#657373'
-                },
-                title: {
-                    display: true,
-                    text: 'Average Price (£)',
-                    color: '#002f38'
-                }
-                },
-                x: {
-                ticks: {
-                    color: '#002f38',
-                    autoSkip: false,
-                    maxRotation: 45,
-                    minRotation: 45
-                },
-                grid: {
-                    color: '#657373'
-                },
-                title: {
-                    display: true,
-                    text: 'Neighborhood',
-                    color: '#002f38'
-                }
-                }
+    const ctx = document.getElementById('avgPriceChart').getContext('2d');
+    const avgPriceChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: [
+          'Chelsea', 'Westminster', 'Kensington', 'Notting Hill', 'Marylebone',
+          'Soho', 'Camden', 'Islington', 'Shoreditch', 'Greenwich'
+        ],
+        datasets: [{
+          label: 'Average Price (£)',
+          data: [
+            2452893.53, 2291436.73, 2282232.92, 1957588.57, 1824982.30,
+            1781120.77, 1626332.17, 1507373.20, 1332828.89, 1269408.81
+          ],
+          backgroundColor: '#00cfcf',
+          borderColor: '#002f38',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                let value = context.raw;
+                return '£' + value.toLocaleString();
+              }
             }
+          }
+        },
+        scales: {
+          y: {
+            ticks: {
+              color: '#002f38',
+              callback: function(value) {
+                return '£' + value.toLocaleString();
+              }
+            },
+            grid: {
+              color: '#657373'
+            },
+            title: {
+              display: true,
+              text: 'Average Price (£)',
+              color: '#002f38'
             }
-        });
-        </script>
-
-
+          },
+          x: {
+            ticks: {
+              color: '#002f38',
+              autoSkip: false,
+              maxRotation: 45,
+              minRotation: 45
+            },
+            grid: {
+              color: '#657373'
+            },
+            title: {
+              display: true,
+              text: 'Neighborhood',
+              color: '#002f38'
+            }
+          }
+        }
+      }
+    });
+  </script>
 </body>
 </html>
