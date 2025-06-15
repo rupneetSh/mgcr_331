@@ -82,6 +82,16 @@ body {
   transform: scale(1.03);
 }
 
+.nav-button.active {
+  background-color: #b2edf2;
+  color: #002f38 !important;
+  font-weight: bold;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  margin-right: -25px; 
+  border-right: 5px #b2edf2;
+}
+
 
 
 .sidebar form {
