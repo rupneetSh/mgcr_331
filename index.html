@@ -8,7 +8,7 @@
 </head>
 <body>
   <div class="container">
-    <!-- Sidebar Navigation and Form -->
+    <!--navigation-->
     <nav class="sidebar">
       <h2>Sales Summary</h2>
       <ul>
@@ -17,7 +17,7 @@
         <li><a href="price_variation.html" class="nav-button">Variations in Sales Price</a></li>
       </ul>
 
-      <!-- Feedback Form -->
+      <!--form-->
       <form>
         <p style="margin-top: 10px;">Did You Find This Information Useful?</p>
         <input type="radio" id="yes" name="useful" value="yes" />
@@ -33,12 +33,11 @@
       </form>
     </nav>
 
-    
-    <!-- Main Content and External Links Side by Side -->
-    <div class="content-wrapper">
-      <main class="content">
+    <!--content-->
+    <main class="content">
+      <div class="main-area">
         <h1>Average Property Price</h1>
-        <ol>
+        <ol style="padding-left: 20px; margin-top: 10px;">
           <li>Total Sales:<strong> £1.84M</strong></li>
           <li>Most Expensive Neighborhood:<strong> Chelsea (£2.45M)</strong></li>
           <li>Least Expensive Neighborhood:<strong> Greenwich (£1.27M)</strong></li>
@@ -64,9 +63,9 @@
 
         <h2>Average Property Price by Neighborhood</h2>
         <canvas id="avgPriceChart" width="300" height="200" style="margin-top: 30px;"></canvas>
-      </main>
+      </div>
 
-      <!-- External Links -->
+      <!-- external resources box -->
       <aside class="external-box">
         <h3>External Resources</h3>
         <ul>
@@ -74,7 +73,7 @@
           <li><a href="https://www.gov.uk/government/statistics" target="_blank">UK Gov Housing Data</a></li>
         </ul>
       </aside>
-    </div>
+    </main>
   </div>
 
   <script>

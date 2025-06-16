@@ -14,23 +14,44 @@
         <li><a href="days_on_market.html" class="nav-button active">Average Days on Market</a></li>
         <li><a href="price_variation.html" class="nav-button">Variations in Sales Price</a></li>
       </ul>
-      <p>External Resources</p>
-      <ul>
-        <li><a href="https://www.zoopla.co.uk/">Zoopla</a></li>
-        <li><a href="https://www.statista.com/">Statista Housing</a></li>
-      </ul>
+
+      <!-- form -->
+      <form>
+        <p style="margin-top: 10px;">Did You Find This Information Useful?</p>
+        <input type="radio" id="yes" name="useful" value="yes" />
+        <label for="yes">Yes</label>
+        <input type="radio" id="no" name="useful" value="no" style="margin-left: 10px;" />
+        <label for="no">No</label><br /><br />
+
+        <label for="comments">Comments:</label><br />
+        <textarea id="comments" name="comments" rows="3" style="width: 100%; resize: none;"></textarea><br /><br />
+
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+      </form>
     </nav>
 
+    <!--content-->
     <main class="content">
-      <h1>Average Days on Market</h1>
-      <ol>
-        <li>Most Rapidly Sold:<strong> Apartment (70 Days)</strong></li>
-        <li>Least Rapidly Sold:<strong> Semi-Detached (75 Days)</strong></li>
-      </ol>
+      <div class="main-area">
+        <h1>Average Days on Market</h1>
+        <ol style="padding-left: 20px; margin-top: 10px;">
+          <li>Most Rapidly Sold:<strong> Apartment (70 Days)</strong></li>
+          <li>Least Rapidly Sold:<strong> Semi-Detached (75 Days)</strong></li>
+        </ol>
 
-      <img src="images/chart2.png" alt="Days on Market Chart" />
-      <img src="images/chart22.png" alt="Days on Market Chart" />
+        <img src="images/chart2.png" alt="Days on Market Chart" style="max-width: 100%; margin-top: 20px;" />
+        <img src="images/chart22.png" alt="Days on Market Chart" style="max-width: 100%; margin-top: 20px;" />
+      </div>
 
+      <!--external resources box -->
+      <aside class="external-box">
+        <h3>External Resources</h3>
+        <ul>
+          <li><a href="https://www.zoopla.co.uk/" target="_blank">Zoopla</a></li>
+          <li><a href="https://www.statista.com/" target="_blank">Statista Housing</a></li>
+        </ul>
+      </aside>
     </main>
   </div>
 </body>
